@@ -22,7 +22,7 @@ def generate_article(title, outline):
   article = completions.choices[0].text
   return article
 
-st.title("Mi App de Streamlit")
+st.title("Generador de artículos")
 
 sidebar = st.sidebar
 title = sidebar.text_input("Título:")
