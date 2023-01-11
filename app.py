@@ -13,10 +13,10 @@ def generate_article(title, outline):
   completions = openai.Completion.create(
       engine=model_engine,
       prompt=prompt,
-      max_tokens=3024,
+      max_tokens=3824,
       n=1,
       stop=None,
-      temperature=0.7,
+      temperature=0.8,
   )
 
   article = completions.choices[0].text
