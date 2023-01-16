@@ -25,7 +25,7 @@ st.title("Generador de artículos")
 
 sidebar = st.sidebar
 title = sidebar.text_input("Título:")
-outline = sidebar.text_area("Esquema:")
+outline = sidebar.text_area("Secciones:")
 
 if st.button("Generar artículo"):
     article = generate_article(title, outline)
