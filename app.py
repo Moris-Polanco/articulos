@@ -30,12 +30,3 @@ outline = sidebar.text_area("Esquema:")
 if st.button("Generar artículo"):
     article = generate_article(title, outline)
     st.success(article)
-    if st.button("Exportar artículo"):
-        path = os.path.join(os.path.expanduser('~'), 'Downloads', 'Article.docx')
-        from docx import Document
-        document = Document()
-        document.add_paragraph(article)
-        document.save(path)
-        st.success("Artículo exportado en formato docx en la carpeta de descargas")
-
-    st.success("Artículo exportado en formato docx")
