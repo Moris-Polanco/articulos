@@ -25,21 +25,14 @@ st.title("Generador de artículos")
 
 sidebar = st.sidebar
 title = sidebar.text_input("Título:")
-outline = sidebar.text_area("Esquema o partes:")
+outline = sidebar.text_area("Esquema:")
 
 if st.button("Generar artículo"):
     article = generate_article(title, outline)
     st.success(article)
-if article and st.button("Exportar artículo"):
-    from docx import Document
-    document = Document()
-    document.add_paragraph(article)
-    document.save("Article.docx")
-    st.success("Artículo exportado en formato docx")
-
-if st.button("Exportar artículo"):
-    from docx import Document
-    document = Document()
-    document.add_paragraph(article)
-    document.save("Article.docx")
-    st.success("Artículo exportado en formato docx")
+    if st.button("Exportar artículo"):
+        from docx import Document
+        document = Document()
+        document.add_paragraph(article)
+        document.save("Article.docx")
+        st.success("Artículo exportado en formato docx")
