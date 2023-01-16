@@ -27,12 +27,11 @@ sidebar = st.sidebar
 title = sidebar.text_input("Título:")
 outline = sidebar.text_area("Esquema:")
 
-if st.button("Generar artículo"):
-    article = generate_article(title, outline)
-    st.success(article)
-    if st.button("Exportar artículo"):
-        from docx import Document
-        document = Document()
-        document.add_paragraph(article)
-        document.save("Article.docx")
-        st.success("Artículo exportado en formato docx")
+if st.button("Exportar artículo"):
+    import os
+    from docx import Document
+    document = Document()
+    document.add_paragraph(article)
+    path = os.path.expanduser('~/Downloads/Article.docx')
+    document.save(path)
+    st.success("Artículo exportado en formato docx")
