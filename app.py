@@ -32,8 +32,6 @@ if st.button("Generar artículo"):
   article = generate_article(title, outline)
   st.success(article)
 if st.button("Exportar artículo"):
-  st.write("Artículo exportado a un archivo") # En lugar de esta línea se puede agregar una lógica para exportar el artículo a un archivo en un formato específico (ej. .txt, .docx, etc.)
-if st.button("Exportar artículo"):
     from docx import Document
     document = Document()
     document.add_paragraph(article)
